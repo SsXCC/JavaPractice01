@@ -11,22 +11,7 @@ public class GoBang {
     //白子后手
     int p2 = 2;
     Scanner input = new Scanner(System.in);
-    String str;
-
-    public void gameStart() {
-        //游戏开始，调用打印棋盘方法
-        printBorad();
-        //如果棋盘未满 或 未分胜负 或 无人投降，则正常循环下棋回合，执行do...while
-        do {
-            //一次下棋回合，后续补充设置回合时限
-            //黑方回合
-            if (isRound(p1)) ;
-            else break;
-            //白方回合
-            if (isRound(p2)) ;
-            else break;
-        } while (true);
-    }
+    String str = "";
 
     //打印棋盘方法
     public void printBorad() {
@@ -59,6 +44,24 @@ public class GoBang {
         System.out.println("");
     }
 
+    public void gameStart() {
+        //游戏开始，调用打印棋盘方法
+        printBorad();
+        //如果棋盘未满 或 未分胜负 或 无人投降，则正常循环下棋回合，执行do...while
+        do {
+            //一次下棋回合，后续补充设置回合时限
+            //黑方回合
+            if (isRound(p1)) ;
+            else break;
+
+            if (isFull()) break;
+
+            //白方回合
+            if (isRound(p2)) ;
+            else break;
+        } while (true);
+    }
+
     //下棋回合方法，后续补充设置回合时限
     private boolean isRound(int p) {
         //加异常捕获
@@ -69,7 +72,6 @@ public class GoBang {
 
         str = input.next();
         if (isSurrender(p)) return false;//判断投降
-        else if (isFull()) return false;//判断棋盘未满
         else getLocations(p);
         if (isWin()) return false;//判断胜负
 
@@ -127,7 +129,7 @@ public class GoBang {
         return false;
     }
 
-    //判断棋盘未满
+    //判断棋盘是否满
     private boolean isFull() {
         for (int[] i : board) {
             for (int j : i) {

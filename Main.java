@@ -48,8 +48,10 @@ class Test_1 {
 //        Triangle.hollowTriangle01(10);
 //        char x = (char) 97;
 //        System.out.println(x);
-        int y = 'A';
-        System.out.println(y - 'a');
+//        int y = 'A';
+//        System.out.println(y - 'a');
+        String s1 = null;
+        System.out.println(s1 == "gg");//s1为null时.equals()报错
     }
 }
 class ChangeIt
