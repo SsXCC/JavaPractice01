@@ -16,7 +16,7 @@ public class Triangle {
     }
 
     public static void YangHuiTriangle(int line) {
-        //杨辉三角
+        //杨辉三角1111
     }
 
 }
