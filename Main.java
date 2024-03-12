@@ -4,7 +4,6 @@ import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
-import java.util.StringJoiner;
 
 public class Main {
     public static void main(String[] args) throws IntrospectionException {
@@ -48,8 +47,8 @@ class Test_1 {
 //        Arr[] arrs = {arr0, arr1, arr2};
 //        Triangle.YangHuiTriangle(10);
 //        Triangle.YangHuiTriangle01(10);
-        Triangle.HollowTriangle(10);
-        Triangle.HollowTriangle01(10);
+        Triangle.hollowTriangle(10);
+        Triangle.hollowTriangle01(10);
 
     }
 }

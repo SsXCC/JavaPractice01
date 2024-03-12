@@ -65,6 +65,7 @@ public class ArrTest01 {
         System.out.println("");
     }
 
+    //冒泡排序：
     private static void arrSort(int[] arr) {
         boolean isDone = false;
         System.out.println("降序输出数组：");
@@ -72,7 +73,7 @@ public class ArrTest01 {
             int temp = -1;
             //如果没有交换排序则说明数组已完成排序，后续无需再进交换排序的for循环
             if (isDone == false) {
-                //将最大值沉底（升序排列）并输出
+                //将最大值沉底（升序排列）并倒序输出
                 for (int k = 0; k < arr.length - j -1; k++) {
                     if (arr[k] > arr[k + 1]) {
                         temp = arr[k];

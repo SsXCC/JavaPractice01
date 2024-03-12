@@ -1,6 +1,6 @@
 public class Triangle {
     //非二维数组输出空心三角
-    public static void HollowTriangle(int line) {
+    public static void hollowTriangle(int line) {
         for (int i = 0; i < line ; i++) {
             for (int j = 0; j < line - i - 1 ; j++) {
                 System.out.print(" ");
@@ -17,7 +17,7 @@ public class Triangle {
     }
 
     //二维数组输出空心三角
-    public static void HollowTriangle01(int line) {
+    public static void hollowTriangle01(int line) {
         String[][] ht = new String[line][];
         for (int i = 0; i < line; i++) {
             for (int j = 0; j < line - i - 1; j++) {
@@ -37,7 +37,7 @@ public class Triangle {
         }
     }
 
-    public static void YangHuiTriangle(int line) {
+    public static void yangHuiTriangle(int line) {
         //杨辉三角
         int[][] yht = new int[line][];
         for (int i = 0; i < yht.length; i++) {
@@ -54,7 +54,7 @@ public class Triangle {
         }
     }
 
-    public static void YangHuiTriangle01(int line) {
+    public static void yangHuiTriangle01(int line) {
         //杨辉三角1
         int[][] yht = new int[line][];
         for (int i = 0; i < yht.length; i++) {
