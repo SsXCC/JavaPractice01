@@ -6,13 +6,10 @@ import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 
 public class Main {
-    public static void main(String[] args) throws IntrospectionException {
-        BeanInfo info = Introspector.getBeanInfo(Test2.class);
-        for (PropertyDescriptor pd : info.getPropertyDescriptors()) {
-            System.out.println(pd.getName());
-            System.out.println("  " + pd.getReadMethod());
-            System.out.println("  " + pd.getWriteMethod());
-            }
+    public static void main(String[] args) {
+        GoBang game01 = new GoBang();
+        game01.gameStart();
+//        game01.printBorad();
     }
 }
 class Test_1 {
@@ -47,9 +44,12 @@ class Test_1 {
 //        Arr[] arrs = {arr0, arr1, arr2};
 //        Triangle.YangHuiTriangle(10);
 //        Triangle.YangHuiTriangle01(10);
-        Triangle.hollowTriangle(10);
-        Triangle.hollowTriangle01(10);
-
+//        Triangle.hollowTriangle(10);
+//        Triangle.hollowTriangle01(10);
+//        char x = (char) 97;
+//        System.out.println(x);
+        int y = 'A';
+        System.out.println(y - 'a');
     }
 }
 class ChangeIt
