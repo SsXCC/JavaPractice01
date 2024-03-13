@@ -143,6 +143,8 @@ public class GoBang {
 
     //判断胜负
     private boolean isWin() {
+        int[][] arrRow = new int[15][15];
+        int[][] arrK = new int[21][];
         return false;
     }
 
