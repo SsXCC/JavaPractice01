@@ -8,7 +8,7 @@ import java.beans.PropertyDescriptor;
 public class Main {
     public static void main(String[] args) {
         GoBang game01 = new GoBang();
-        game01.gameStart();
+        game01.gameStart();//后续仍需完善几个输入判断、异常捕捉和回合倒计时功能
     }
 }
 class Test_1 {
