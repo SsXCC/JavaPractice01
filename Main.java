@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
         GoBang game01 = new GoBang();
         game01.gameStart();
-//        game01.printBorad();
     }
 }
 class Test_1 {
@@ -50,8 +49,15 @@ class Test_1 {
 //        System.out.println(x);
 //        int y = 'A';
 //        System.out.println(y - 'a');
-        String s1 = null;
-        System.out.println(s1 == "gg");//s1为null时.equals()报错
+//        String s1 = null;
+//        System.out.println(s1 == "gg");//s1为null时.equals()报错
+        int[] l = {1, 0, 1, 1, 1, 1, 0, 0, 0};
+        String s = "";
+        for (int i : l) {
+            s = s.concat(String.valueOf(i));
+        }
+        System.out.println(s);
+        System.out.println(s.contains("11111"));
     }
 }
 class ChangeIt
