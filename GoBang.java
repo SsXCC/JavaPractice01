@@ -14,9 +14,9 @@ public class GoBang {
     //打印棋盘方法
     public void printBoard() {
         //棋盘坐标，行标小写字母a-o，列标大写字母A-O
-        char[] line = new char[15];
-        for (int i = 0; i < line.length; i++) {
-            line[i] = (char) (97 + i);
+        char[] col = new char[15];
+        for (int i = 0; i < col.length; i++) {
+            col[i] = (char) (97 + i);
         }
 
         char[] row = new char[15];
@@ -28,11 +28,11 @@ public class GoBang {
         System.out.println();
         //打印两侧行标和棋盘
         for (int i = 0; i < board.length; i++) {
-            System.out.print(line[i] + " ");
+            System.out.print(col[i] + " ");
             for (int j = 0; j < board[i].length; j++) {
                 System.out.print(board[i][j] + " ");
             }
-            System.out.println(line[i]);
+            System.out.println(col[i]);
         }
         //打印底部列标
         System.out.print(" ");
