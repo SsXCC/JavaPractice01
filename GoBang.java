@@ -25,7 +25,7 @@ public class GoBang {
             row[i] = (char) (65 + i);
             System.out.print(" " + row[i]);//打印顶部列标
         }
-        System.out.println("");
+        System.out.println();
         //打印两侧行标和棋盘
         for (int i = 0; i < board.length; i++) {
             System.out.print(line[i] + " ");
@@ -39,7 +39,7 @@ public class GoBang {
         for (char x : row) {
             System.out.print(" " + x);
         }
-        System.out.println("");
+        System.out.println();
     }
 
     public void gameStart() {
@@ -49,14 +49,12 @@ public class GoBang {
         do {
             //一次下棋回合，后续补充设置回合时限
             //黑方回合
-            if (isRound(p1)) ;
-            else break;
+            if (!isRound(p1)) break;
 
             if (isFull()) break;
 
             //白方回合
-            if (isRound(p2)) ;
-            else break;
+            if (!isRound(p2)) break;
         } while (true);
     }
 
@@ -67,36 +65,35 @@ public class GoBang {
             System.out.println("黑方回合——请输入落子位置行列标：（如hH），投降请输入gg");
         else if (p == p2)
             System.out.println("白方回合——请输入落子位置行列标：（如hH），投降请输入gg");
+        //获取输入，输入错误或取消投降则重新获取
+        do {
+            str = input.next();
+            if (isSurrender(p)) return false;//判断投降
+            else if (getLocations(p)) return !isWin();//判断胜负
 
-        str = input.next();
-        if (isSurrender(p)) return false;//判断投降
-        else getLocations(p);
-        if (isWin()) return false;//判断胜负
-
-        return true;
+        } while (true);
     }
 
     //获取输入的行列标并落子，打印棋盘
-    private void getLocations(int p) {
+    private boolean getLocations(int p) {
         int l, r;
         //输入处于规定范围内的值才可继续，否则循环调用自身
         if (str.length() != 2 || str.charAt(0) < 'a' || str.charAt(0) > 'o'
                 || str.charAt(1) < 'A' || str.charAt(1) > 'O') {
             System.out.println("行列标输入错误，请重新输入落子位置行列标：（如hH）");
-            str = input.next();
-            getLocations(p);
+            return false;
         } else {
             //此时才可获取行列标，并判断落子处是否已有棋子
             l = str.charAt(0) - 97;
             r = str.charAt(1) - 65;
             if (board[l][r] != 0) {
                 System.out.println("此处已有棋子，请重新输入落子位置行列标：（如hH）");
-                str = input.next();
-                getLocations(p);
+                return false;
             } else {
                 //落子并打印棋盘
                 board[l][r] = p;
                 printBoard();
+                return true;
             }
         }
     }
@@ -121,7 +118,7 @@ public class GoBang {
                     return true;
                 }
             } else {
-                System.out.println("输入错误，请重新输入（确定y，否定n）");
+                System.out.println("输入错误，请重新输入");
                 str = "gg";
             }
         }
