@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Test;
+
 import java.util.Scanner;
 
 //五子棋15*15，二维数组应用
@@ -245,5 +247,13 @@ public class GoBang {
             System.out.println("白方胜利！");
             System.out.println("===============GAME OVER===============");
         }
+    }
+}
+
+class GoBangTest {
+    @Test
+    public void testGB() {
+        GoBang t = new GoBang();
+        t.gameStart();
     }
 }
