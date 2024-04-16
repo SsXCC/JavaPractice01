@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
 汉诺塔，有编号为a,b,c的3个柱子，初始在a塔从小到大堆叠着n个盘子，
 规定上面的盘子一定要比下面的小，要求把盘子移到c塔
@@ -18,11 +20,24 @@ public class Hanoi {
         }
     }
 
+    public void arrayListFill(int num, ArrayList a) {
+        for (int i = 0; i < num; i++) {
+            a.add(i, i + 1);
+        }
+    }
 
 
+    public void move1(int num, ArrayList a, ArrayList b, ArrayList c) {
+        arrayListFill(num, a);
+        
+        if (num == 1) {
+            a.remove(num-1);
+            c.add(num);
+        }
+    }
 
 
-    /*int[] a, b, c;
+    /*;
 
     public void moveToc(int n) {
         int[] a = new int[n];
