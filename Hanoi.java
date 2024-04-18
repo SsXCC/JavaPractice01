@@ -8,7 +8,6 @@ public class Hanoi {
     //num盘的数量，a原位置，b过渡位置，c目标位置
     public void move(int num, char a, char b, char c) {
         if (num == 1) {
-            //把最下面的盘移到c
             System.out.println(a + "->" + c);
         } else {
             //将盘分成两份，最下面和num-1，把num-1移到b
@@ -20,19 +19,52 @@ public class Hanoi {
         }
     }
 
-    public void arrayListFill(int num, ArrayList a) {
+    boolean first = true;
+
+    public void arrayListFill(int num, ArrayList<Integer> a) {
         for (int i = 0; i < num; i++) {
             a.add(i, i + 1);
         }
     }
 
 
-    public void move1(int num, ArrayList a, ArrayList b, ArrayList c) {
-        arrayListFill(num, a);
-        
+    public void move1(int num, ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
+        if (first) {
+            arrayListFill(num, a);
+            first = false;
+        }
         if (num == 1) {
-            a.remove(num-1);
-            c.add(num);
+            int n = a.removeFirst();
+            c.add(n);
+            print(a, b, c);
+        } else {
+            move1(num - 1, a, c, b);
+            int m = a.remove(num - 1);
+            c.add(m);
+            print(a, b, c);
+            move1(num - 1, b, a, c);
+
+        }
+    }
+
+
+    public void comparePrint(int i, int d, ArrayList<Integer> a) {
+        if (d - i > a.size()) {
+            System.out.print(" \t");
+        } else if (d == a.size()) {
+            System.out.print(a.get(i) + "\t");
+        } else {
+            System.out.print(a.get(a.size() - (d - i - 1)) + "\t");
+        }
+    }
+
+    public void print(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
+        int d = Math.max(Math.max(a.size(), b.size()), c.size());
+        for (int i = 0; i < d; i++) {
+            comparePrint(i, d, a);
+            comparePrint(i, d, b);
+            comparePrint(i, d, c);
+            System.out.println();
         }
     }
 

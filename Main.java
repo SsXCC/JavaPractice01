@@ -1,9 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +12,12 @@ class Test_1 {
     @Test
     public void Test1(){
         Hanoi hanoi = new Hanoi();
-        hanoi.move(3, 'A', 'B', 'C');
+        //hanoi.move(3, 'A', 'B', 'C');
+
+        ArrayList<Integer> a = new ArrayList<>();
+        ArrayList<Integer> b = new ArrayList<>();
+        ArrayList<Integer> c = new ArrayList<>();
+        hanoi.move1(3, a, b, c);
     }
     @Test
     public void Test_1() {
