@@ -105,7 +105,7 @@ public class Hanoi {
             System.out.println();
         }
         //整轮结束后换行
-        System.out.println();
+        System.out.println("=========");
     }
 
     //正序列填充塔集合
