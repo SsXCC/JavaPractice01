@@ -21,6 +21,14 @@ public class Hanoi {
 
     boolean first = true;
 
+    ArrayList<Integer> x = new ArrayList<>();
+    ArrayList<Integer> y = new ArrayList<>();
+    ArrayList<Integer> z = new ArrayList<>();
+
+    public void run(int num) {
+        move1(num, x, y, z);
+    }
+
     public void arrayListFill(int num, ArrayList<Integer> a) {
         for (int i = 0; i < num; i++) {
             a.add(i, i + 1);
@@ -35,13 +43,13 @@ public class Hanoi {
         }
         if (num == 1) {
             int n = a.removeFirst();
-            c.add(n);
-            print(a, b, c);
+            c.addFirst(n);
+            print(x, y, z);
         } else {
             move1(num - 1, a, c, b);
-            int m = a.remove(num - 1);
-            c.add(m);
-            print(a, b, c);
+            int m = a.removeFirst();
+            c.addFirst(m);
+            print(x, y, z);
             move1(num - 1, b, a, c);
 
         }
@@ -54,7 +62,7 @@ public class Hanoi {
         } else if (d == a.size()) {
             System.out.print(a.get(i) + "\t");
         } else {
-            System.out.print(a.get(a.size() - (d - i - 1)) + "\t");
+            System.out.print(a.get(a.size() - (d - i)) + "\t");
         }
     }
 
@@ -66,6 +74,7 @@ public class Hanoi {
             comparePrint(i, d, c);
             System.out.println();
         }
+        System.out.println();
     }
 
 

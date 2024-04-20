@@ -14,10 +14,7 @@ class Test_1 {
         Hanoi hanoi = new Hanoi();
         //hanoi.move(3, 'A', 'B', 'C');
 
-        ArrayList<Integer> a = new ArrayList<>();
-        ArrayList<Integer> b = new ArrayList<>();
-        ArrayList<Integer> c = new ArrayList<>();
-        hanoi.move1(3, a, b, c);
+        hanoi.run(5);
     }
     @Test
     public void Test_1() {
