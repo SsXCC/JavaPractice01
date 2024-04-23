@@ -10,6 +10,11 @@ public class Main {
 }
 class Test_1 {
     @Test
+    public void Test2() {
+        EightQueen e = new EightQueen();
+        e.drop(8);
+    }
+    @Test
     public void Test1(){
         Hanoi hanoi = new Hanoi();
         //hanoi.move(3, 'A', 'B', 'C');
