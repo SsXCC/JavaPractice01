@@ -9,8 +9,25 @@ public class Maze {
     终点用数字3表示
      */
 
+
     //用二维数组画迷宫，障碍用数字1表示
+    int[][] a;
+
+    public void creatMaze(int size) {
+        for (int i = 0; i <size ; i++) {
+            if (i == 0 || i == size - 1) {
+                for (int j = 0; j < size; j++) {
+                    a[i][j] = 1;
+                }
+            } else {
+                a[i][0] = 1;
+                a[i][size - 1] = 1;
+            }
+        }
+        //a[size-3]
+    }
     public void printMaze() {
+
 
     }
 

@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+//快速新建对象类，类名.new→.var，如Hanoi.new回车再.var回车
+
 public class Main {
     public static void main(String[] args) {
         GoBang game01 = new GoBang();
@@ -18,7 +20,6 @@ class Test_1 {
     public void Test1(){
         Hanoi hanoi = new Hanoi();
         //hanoi.move(3, 'A', 'B', 'C');
-
         hanoi.run(5);
     }
     @Test
