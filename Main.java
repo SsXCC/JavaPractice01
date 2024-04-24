@@ -12,6 +12,11 @@ public class Main {
 }
 class Test_1 {
     @Test
+    public void Test3() {
+        Maze maze = new Maze();
+        maze.run(9);
+    }
+    @Test
     public void Test2() {
         EightQueen e = new EightQueen();
         e.drop(8);
