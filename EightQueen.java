@@ -19,7 +19,7 @@ public class EightQueen {
     */
     public void drop(int i) {
         if (ifFirst) {
-            int[] a = new int[i];
+            a = new int[i];
             size = i;
             ifFirst = false;
         }
